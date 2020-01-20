@@ -1,0 +1,7 @@
+target/
+derby.log
+
+# Eclipse
+.settings
+.classpath
+.project
