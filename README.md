@@ -1,7 +1,7 @@
 # Example JPA Integration Test
 
 ## Purpose
-This example project demonstrates implementing integration tests for JPA 2.2 and the EclipseLink implementation.  The integration tests are executed outside of a container.
+This example project demonstrates implementing integration tests for JPA 2.2 (with EclipseLink implementation).  The integration tests are executed outside of a container.
 
 ## Notes
 * Assumption is that the source/main/resources/META-INF/persistence.xml is configured to use the server.xml (a container based project).
