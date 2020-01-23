@@ -19,9 +19,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Table(name = "person")
-@NamedQuery(name = "Person.findAll", query = "SELECT p from Person p")
+@NamedQuery(name = Person.FIND_ALL, query = "SELECT p from Person p")
 public class Person {
-	
+
 	public static final String FIND_ALL = "Person.findAll";
 
 	@Id
@@ -33,12 +33,12 @@ public class Person {
 
 	@Column(name = "last_name", length = 50)
 	String lastName;
-	
+
 	public String getLastCommaFirstName() {
 		StringBuffer result = new StringBuffer();
-		if(getLastName() != null)
+		if (getLastName() != null)
 			result.append(getLastName());
-		if(getFirstName() != null) {
+		if (getFirstName() != null) {
 			result.append(", ");
 			result.append(getFirstName());
 		}
