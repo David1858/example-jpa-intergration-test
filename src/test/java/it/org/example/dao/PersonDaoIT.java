@@ -29,6 +29,7 @@ public class PersonDaoIT extends DaoBaseIT{
 		int personCount = personDao.findAll().size();
 		personDao.insert(person);
 		assertThat(personDao.findAll(), hasSize(personCount + 1));
+		assertThat(personDao.findAll(), hasSize(4));
 		
 		entityManager.getTransaction().rollback();
 //		entityManager.getTransaction().commit();

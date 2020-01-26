@@ -27,16 +27,26 @@ public class DaoBaseIT {
 
 		properties.put(TRANSACTION_TYPE, PersistenceUnitTransactionType.RESOURCE_LOCAL.name());
 
+		//javax
 		properties.put(JDBC_DRIVER, "org.apache.derby.jdbc.EmbeddedDriver");
-		properties.put(JDBC_URL, "jdbc:derby:/target/derbyDB/exampleDb;create=true");
+		properties.put(JDBC_URL, "jdbc:derby:memory:exampleDb;create=true");
+		//properties.put(JDBC_URL, "jdbc:derby:target/derbyDB/exampleDb;create=true");
 		properties.put(JDBC_USER, "user");
 		properties.put(JDBC_PASSWORD, "password");
 		
-		properties.put(DDL_GENERATION, "drop-and-create-tables");
-		properties.put(DDL_GENERATION_MODE, "both");
-		properties.put(CREATE_JDBC_DDL_FILE, "target/create.sql");
-		properties.put(DROP_JDBC_DDL_FILE, "target/drop.sql");
+		//eclipselink
+		//properties.put(DDL_GENERATION, "drop-and-create-tables");
+		//properties.put(DDL_GENERATION_MODE, "both");
+		//properties.put(CREATE_JDBC_DDL_FILE, "target/create.sql");
+		//properties.put(DROP_JDBC_DDL_FILE, "target/drop.sql");
 		
+		//javax
+		properties.put(SCHEMA_GENERATION_DATABASE_ACTION, "drop-and-create");
+		properties.put(SCHEMA_GENERATION_SCRIPTS_ACTION, "drop-and-create");		
+        properties.put(SCHEMA_GENERATION_SCRIPTS_CREATE_TARGET, "target/create.sql");
+        properties.put(SCHEMA_GENERATION_SCRIPTS_DROP_TARGET, "target/drop.sql");
+        properties.put(SCHEMA_GENERATION_SQL_LOAD_SCRIPT_SOURCE, "test-data.sql");      
+        
 		//By default sql bind parameters are displayed in exceptions and logs
 	    // when the log level is FINE or greater.
 		properties.put(LOGGING_LEVEL, "FINE");
